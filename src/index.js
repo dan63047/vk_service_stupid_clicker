@@ -13,24 +13,28 @@ const App = () => {
         <p style={{fontSize: 70+'px', margin: 0}}>0</p>
         <small style={{fontSize: 12+'px', margin: 0}}>+0 в сек.</small><br/>
         <Button size="xl">Жми!<br/>+<span>1</span> за клик</Button>
+      </Div>
       <Header mode="secondary">Прокачка!</Header>
       <CardScroll>
         <Card size="s">
+        <Div align="center">
           <div style={{ width: 180, height: 110 }}>
             <p>Больше очков за клик!</p>
             <p style={{fontSize: 12+'px'}}>Увеличивает количество очков за клик на +1</p>
             <Button>Купить! (цена: <span id='inclickcost'>100</span>)</Button>
           </div>
+        </Div>
         </Card>
         <Card size="s">
+        <Div align="center">
           <div style={{ width: 180, height: 110 }}>
             <p>Очки каждую секунду!</p>
             <p style={{fontSize: 12+'px'}}>Увеличивает начисляемые очки за секунду на +1</p>
             <Button>Купить! (цена: <span id='inseccost'>50</span>)</Button>
           </div>
+        </Div>
         </Card>
       </CardScroll>
-      </Div>
       <Group header={<Header mode="secondary">Статистика</Header>}>
         <Cell asideContent={<span>0:00:00.0</span>}>
         Потрачено времени
