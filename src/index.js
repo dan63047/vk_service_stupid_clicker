@@ -1,14 +1,20 @@
-import "core-js/features/map";
-import "core-js/features/set";
-import React from "react";
-import ReactDOM from "react-dom";
-import bridge from "@vkontakte/vk-bridge";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { View, Panel, PanelHeader, Header, Group, Cell } from '@vkontakte/vkui';
+import '@vkontakte/vkui/dist/vkui.css';
 
-// Init VK  Mini App
-bridge.send("VKWebAppInit");
-
-ReactDOM.render(<App />, document.getElementById("root"));
-if (process.env.NODE_ENV === "development") {
-  import("./eruda").then(eruda => {}); //runtime download
+const App = () => {
+	return (
+		<View activePanel="main">
+		<Panel id="main">
+			<PanelHeader>VKUI</PanelHeader>
+			<Group header={<Header mode="secondary">Items</Header>}>
+			<Cell>Hello</Cell>
+			<Cell>World</Cell>
+			</Group>
+		</Panel>
+		</View>
+	);
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));
