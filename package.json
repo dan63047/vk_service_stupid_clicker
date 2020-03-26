@@ -2,7 +2,7 @@
   "name": "dan63047",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://dan63047.github.io/",
+  "homepage": "https://dan63047.github.io/dan63047",
   "main": "index.js",
   "scripts": {
     "start": "cross-env PORT=10888 HTTPS=true react-scripts start",
