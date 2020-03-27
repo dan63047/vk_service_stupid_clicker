@@ -10,9 +10,9 @@ const App = () => {
       <Panel separator={false} id="general">
       <PanelHeaderSimple>Тупорылый кликер</PanelHeaderSimple>
       <Div align="center">
-        <p style={{fontSize: 70+'px', margin: 0}}>0</p>
+        <p style={{fontSize: 70+'px', margin: 0}} id="count">0</p>
         <small style={{fontSize: 12+'px', margin: 0}}>+0 в сек.</small><br/>
-        <Button size="xl">Жми!<br/>+<span>1</span> за клик</Button>
+        <Button size="xl" onClick="ScoreUpClick">Жми!<br/>+<span>1</span> за клик</Button>
       </Div>
       <Header mode="secondary">Прокачка!</Header>
       <CardScroll>
@@ -21,7 +21,7 @@ const App = () => {
           <div style={{ width: 180, height: 110 }}>
             <p>Больше очков за клик!</p>
             <p style={{fontSize: 12+'px'}}>Увеличивает количество очков за клик на +1</p>
-            <Button>Купить! (цена: <span id='inclickcost'>100</span>)</Button>
+            <Button>Купить за <span id='inclickcost'>100</span></Button>
           </div>
         </Div>
         </Card>
@@ -30,19 +30,19 @@ const App = () => {
           <div style={{ width: 180, height: 110 }}>
             <p>Очки каждую секунду!</p>
             <p style={{fontSize: 12+'px'}}>Увеличивает начисляемые очки за секунду на +1</p>
-            <Button>Купить! (цена: <span id='inseccost'>50</span>)</Button>
+            <Button>Купить за <span id='inseccost'>50</span></Button>
           </div>
         </Div>
         </Card>
       </CardScroll>
       <Group header={<Header mode="secondary">Статистика</Header>}>
-        <Cell asideContent={<span>0:00:00.0</span>}>
+        <Cell asideContent={<span id='timefuckup'>0:00:00.0</span>}>
         Потрачено времени
         </Cell>
-        <Cell asideContent={<span>0</span>}>
+        <Cell asideContent={<span id="total">0</span>}>
         Общий счет
         </Cell>
-        <Cell asideContent={<span>0</span>}>
+        <Cell asideContent={<span id="clicks">0</span>}>
         Количество кликов
         </Cell>
         <Cell asideContent={<span>0</span>}>
@@ -51,7 +51,7 @@ const App = () => {
         <Cell expandable>
         Таблица лидеров
         </Cell>
-        <Cell expandable>
+        <Cell expandable mode="danger">
         Сбросить прогресс
         </Cell>
       </Group>
@@ -75,3 +75,56 @@ const App = () => {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+var hscore = document.getElementById('count'),
+    hinsec = document.getElementById('insec'),
+    hinclick = document.getElementById('inclick'),
+    hinclickcost = document.getElementById('inclickcost'),
+    hinseccost = document.getElementById('inseccost'),
+    htime = document.getElementById('timefuckup'),
+    htotal = document.getElementById('total'),
+    hshopcount = document.getElementById('shopcount'),
+    hclicks = document.getElementById('clicks'),
+    score = 0,
+    upClick = 1,
+    upSec = 0,
+    upClickCost = 100,
+    upSecCost = 50,
+    stats = Array()
+    stats['fuckuptime'] = 0
+    stats['total'] = 0
+    stats['shopcount'] = 0
+    stats['clicks'] = 0;
+
+
+//TakeFromDatabase();
+setInterval(Time, 100);
+ScoreUpClick();
+
+function Time(){
+  var time1_10 = Math.floor((stats['fuckuptime']) % 10),
+  timesec = Math.floor((stats['fuckuptime']/10) % 60),
+  timemin = Math.floor((stats['fuckuptime']/10/60) % 60),
+  timehour = Math.floor(stats['fuckuptime']/10/60/60);
+
+  stats['fuckuptime'] = stats['fuckuptime'] + 1;
+  htime.innerHTML = timehour + ':' + ('0'+timemin).slice(-2) + ':' + ('0'+timesec).slice(-2) + '.' + time1_10;
+  // set_cookie('score', score, 2038, 1, 1);
+  // set_cookie('upSec', upSec, 2038, 1, 1);
+  // set_cookie('upClick', upClick, 2038, 1, 1);
+  // set_cookie('upClickCost', upClickCost, 2038, 1, 1);
+  // set_cookie('upSecCost', upSecCost, 2038, 1, 1);
+  // set_cookie('fuckuptime', stats['fuckuptime'], 2038, 1, 1);
+  // set_cookie('total', stats['total'], 2038, 1, 1);
+  // set_cookie('shopcount', stats['shopcount'], 2038, 1, 1);
+  // set_cookie('clicks', stats['clicks'], 2038, 1, 1);
+}
+
+function ScoreUpClick(){
+  score = score + upClick;
+  stats['total'] = stats['total'] + upClick;
+  stats['clicks'] = stats['clicks'] + 1;
+  hscore.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(score));
+  hclicks.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['clicks']));
+  htotal.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['total']));
+}
