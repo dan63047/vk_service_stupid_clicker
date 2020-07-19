@@ -11,8 +11,8 @@ const App = () => {
       <PanelHeaderSimple>Тупорылый кликер</PanelHeaderSimple>
       <Div align="center">
         <p style={{fontSize: 70+'px', margin: 0}} id="count">0</p>
-        <small style={{fontSize: 12+'px', margin: 0}}>+0 в сек.</small><br/>
-        <Button size="xl" onClick="ScoreUpClick">Жми!<br/>+<span>1</span> за клик</Button>
+        <small style={{fontSize: 12+'px', margin: 0}}>+<span id="insec">0</span> в сек.</small><br/>
+        <Button size="xl" onClick={ScoreUpClick}>Жми!<br/>+<span id="inclick">1</span> за клик</Button>
       </Div>
       <Header mode="secondary">Прокачка!</Header>
       <CardScroll>
@@ -21,7 +21,7 @@ const App = () => {
           <div style={{ width: 180, height: 110 }}>
             <p>Больше очков за клик!</p>
             <p style={{fontSize: 12+'px'}}>Увеличивает количество очков за клик на +1</p>
-            <Button>Купить за <span id='inclickcost'>100</span></Button>
+            <Button onClick={BuyUpClick}>Купить за <span id='inclickcost'>100</span></Button>
           </div>
         </Div>
         </Card>
@@ -30,7 +30,7 @@ const App = () => {
           <div style={{ width: 180, height: 110 }}>
             <p>Очки каждую секунду!</p>
             <p style={{fontSize: 12+'px'}}>Увеличивает начисляемые очки за секунду на +1</p>
-            <Button>Купить за <span id='inseccost'>50</span></Button>
+            <Button onClick={BuyUpSec}>Купить за <span id='inseccost'>50</span></Button>
           </div>
         </Div>
         </Card>
@@ -45,7 +45,7 @@ const App = () => {
         <Cell asideContent={<span id="clicks">0</span>}>
         Количество кликов
         </Cell>
-        <Cell asideContent={<span>0</span>}>
+        <Cell asideContent={<span id="shopcount">0</span>}>
         Количество покупок
         </Cell>
         <Cell expandable>
@@ -99,7 +99,6 @@ var hscore = document.getElementById('count'),
 
 //TakeFromDatabase();
 setInterval(Time, 100);
-ScoreUpClick();
 
 function Time(){
   var time1_10 = Math.floor((stats['fuckuptime']) % 10),
@@ -109,6 +108,13 @@ function Time(){
 
   stats['fuckuptime'] = stats['fuckuptime'] + 1;
   htime.innerHTML = timehour + ':' + ('0'+timemin).slice(-2) + ':' + ('0'+timesec).slice(-2) + '.' + time1_10;
+
+  if (stats['fuckuptime'] % 10 == 0){
+    score = score + upSec;
+    stats['total'] = stats['total'] + upSec;
+    hscore.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(score));
+    htotal.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['total']));
+  }
   // set_cookie('score', score, 2038, 1, 1);
   // set_cookie('upSec', upSec, 2038, 1, 1);
   // set_cookie('upClick', upClick, 2038, 1, 1);
@@ -126,5 +132,35 @@ function ScoreUpClick(){
   stats['clicks'] = stats['clicks'] + 1;
   hscore.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(score));
   hclicks.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['clicks']));
+  htotal.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['total']));
+}
+function BuyUpClick(){
+  if(score >= upClickCost){
+  score = score - upClickCost;
+  upClick = upClick + 1;
+  upClickCost = upClickCost + 20;
+  hscore.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(score));
+  hinclick.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(upClick));
+  hinclickcost.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(upClickCost));
+  stats['shopcount'] = stats['shopcount'] + 1;
+  hshopcount.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['shopcount']));
+  }
+}
+function BuyUpSec(){
+  if(score >= upSecCost){
+  score = score - upSecCost;
+  upSec = upSec + 1;
+  upSecCost = upSecCost + 40;
+  hscore.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(score));
+  hinsec.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(upSec));
+  hinseccost.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(upSecCost));
+  stats['shopcount'] = stats['shopcount'] + 1;
+  hshopcount.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['shopcount']));
+  }
+}
+function UpSec(){
+  score = score + upSec;
+  stats['total'] = stats['total'] + upSec;
+  hscore.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(score));
   htotal.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['total']));
 }
