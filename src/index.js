@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { View, Panel, PanelHeaderSimple, Root, Div, CardScroll, Card, Header, Button, Group, Cell } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
+import bridge from '@vkontakte/vk-bridge';
+
+bridge.send("VKWebAppInit", {});
 
 const App = () => {
 	return (
@@ -90,7 +93,7 @@ var hscore = document.getElementById('count'),
     upSec = 0,
     upClickCost = 100,
     upSecCost = 50,
-    stats = Array()
+    stats = [];
     stats['fuckuptime'] = 0
     stats['total'] = 0
     stats['shopcount'] = 0
@@ -109,7 +112,7 @@ function Time(){
   stats['fuckuptime'] = stats['fuckuptime'] + 1;
   htime.innerHTML = timehour + ':' + ('0'+timemin).slice(-2) + ':' + ('0'+timesec).slice(-2) + '.' + time1_10;
 
-  if (stats['fuckuptime'] % 10 == 0){
+  if (stats['fuckuptime'] % 10 === 0){
     score = score + upSec;
     stats['total'] = stats['total'] + upSec;
     hscore.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(score));
@@ -157,10 +160,4 @@ function BuyUpSec(){
   stats['shopcount'] = stats['shopcount'] + 1;
   hshopcount.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['shopcount']));
   }
-}
-function UpSec(){
-  score = score + upSec;
-  stats['total'] = stats['total'] + upSec;
-  hscore.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(score));
-  htotal.innerHTML = Intl.NumberFormat('ru-RU').format(Math.trunc(stats['total']));
 }
