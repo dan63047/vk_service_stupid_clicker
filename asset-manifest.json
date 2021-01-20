@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.js": "/dan63047/static/js/main.82beba2a.chunk.js",
-    "main.js.map": "/dan63047/static/js/main.82beba2a.chunk.js.map",
-    "runtime-main.js": "/dan63047/static/js/runtime-main.8990a356.js",
-    "runtime-main.js.map": "/dan63047/static/js/runtime-main.8990a356.js.map",
-    "static/css/2.86df01db.chunk.css": "/dan63047/static/css/2.86df01db.chunk.css",
-    "static/js/2.9edd34a8.chunk.js": "/dan63047/static/js/2.9edd34a8.chunk.js",
-    "static/js/2.9edd34a8.chunk.js.map": "/dan63047/static/js/2.9edd34a8.chunk.js.map",
-    "index.html": "/dan63047/index.html",
-    "precache-manifest.5afa3bc7860b0986e978df575c11c21b.js": "/dan63047/precache-manifest.5afa3bc7860b0986e978df575c11c21b.js",
-    "service-worker.js": "/dan63047/service-worker.js",
-    "static/css/2.86df01db.chunk.css.map": "/dan63047/static/css/2.86df01db.chunk.css.map",
-    "static/js/2.9edd34a8.chunk.js.LICENSE.txt": "/dan63047/static/js/2.9edd34a8.chunk.js.LICENSE.txt"
+    "main.js": "/vk_service_stupid_clicker/static/js/main.a88bbe95.chunk.js",
+    "main.js.map": "/vk_service_stupid_clicker/static/js/main.a88bbe95.chunk.js.map",
+    "runtime-main.js": "/vk_service_stupid_clicker/static/js/runtime-main.babe0297.js",
+    "runtime-main.js.map": "/vk_service_stupid_clicker/static/js/runtime-main.babe0297.js.map",
+    "static/css/2.cdee455b.chunk.css": "/vk_service_stupid_clicker/static/css/2.cdee455b.chunk.css",
+    "static/js/2.140d933d.chunk.js": "/vk_service_stupid_clicker/static/js/2.140d933d.chunk.js",
+    "static/js/2.140d933d.chunk.js.map": "/vk_service_stupid_clicker/static/js/2.140d933d.chunk.js.map",
+    "index.html": "/vk_service_stupid_clicker/index.html",
+    "precache-manifest.63e4263eed98262d81dfcc43ccf99d48.js": "/vk_service_stupid_clicker/precache-manifest.63e4263eed98262d81dfcc43ccf99d48.js",
+    "service-worker.js": "/vk_service_stupid_clicker/service-worker.js",
+    "static/css/2.cdee455b.chunk.css.map": "/vk_service_stupid_clicker/static/css/2.cdee455b.chunk.css.map",
+    "static/js/2.140d933d.chunk.js.LICENSE.txt": "/vk_service_stupid_clicker/static/js/2.140d933d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8990a356.js",
-    "static/css/2.86df01db.chunk.css",
-    "static/js/2.9edd34a8.chunk.js",
-    "static/js/main.82beba2a.chunk.js"
+    "static/js/runtime-main.babe0297.js",
+    "static/css/2.cdee455b.chunk.css",
+    "static/js/2.140d933d.chunk.js",
+    "static/js/main.a88bbe95.chunk.js"
   ]
 }
