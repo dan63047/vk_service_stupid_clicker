@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/vk_service_stupid_clicker/static/js/main.a88bbe95.chunk.js",
-    "main.js.map": "/vk_service_stupid_clicker/static/js/main.a88bbe95.chunk.js.map",
+    "main.js": "/vk_service_stupid_clicker/static/js/main.8545b53c.chunk.js",
+    "main.js.map": "/vk_service_stupid_clicker/static/js/main.8545b53c.chunk.js.map",
     "runtime-main.js": "/vk_service_stupid_clicker/static/js/runtime-main.babe0297.js",
     "runtime-main.js.map": "/vk_service_stupid_clicker/static/js/runtime-main.babe0297.js.map",
     "static/css/2.cdee455b.chunk.css": "/vk_service_stupid_clicker/static/css/2.cdee455b.chunk.css",
     "static/js/2.140d933d.chunk.js": "/vk_service_stupid_clicker/static/js/2.140d933d.chunk.js",
     "static/js/2.140d933d.chunk.js.map": "/vk_service_stupid_clicker/static/js/2.140d933d.chunk.js.map",
     "index.html": "/vk_service_stupid_clicker/index.html",
-    "precache-manifest.63e4263eed98262d81dfcc43ccf99d48.js": "/vk_service_stupid_clicker/precache-manifest.63e4263eed98262d81dfcc43ccf99d48.js",
+    "precache-manifest.20fa35a0bf2ee7758fbad8bf468a8c02.js": "/vk_service_stupid_clicker/precache-manifest.20fa35a0bf2ee7758fbad8bf468a8c02.js",
     "service-worker.js": "/vk_service_stupid_clicker/service-worker.js",
     "static/css/2.cdee455b.chunk.css.map": "/vk_service_stupid_clicker/static/css/2.cdee455b.chunk.css.map",
     "static/js/2.140d933d.chunk.js.LICENSE.txt": "/vk_service_stupid_clicker/static/js/2.140d933d.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.babe0297.js",
     "static/css/2.cdee455b.chunk.css",
     "static/js/2.140d933d.chunk.js",
-    "static/js/main.a88bbe95.chunk.js"
+    "static/js/main.8545b53c.chunk.js"
   ]
 }

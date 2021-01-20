@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "037f0db14267d9bf721eb610d9cd6da5",
+    "revision": "e7451b61a86769278efbb9e6528ac95c",
     "url": "/vk_service_stupid_clicker/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vk_service_stupid_clicker/static/js/2.140d933d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c5f757dd775647da6600",
-    "url": "/vk_service_stupid_clicker/static/js/main.a88bbe95.chunk.js"
+    "revision": "c9a41073c32da19c3ec1",
+    "url": "/vk_service_stupid_clicker/static/js/main.8545b53c.chunk.js"
   },
   {
     "revision": "198ced0a75d20db6b299",
